@@ -94,7 +94,7 @@ You’re free to inspect, fork, or adapt the code for educational or personal us
 
 ## 🌐 Official Links
 
-- **Website:** [https://cleantrail.io](https://www.cleantrail.net)  
+- **Website:** [https://www.cleantrail.net](https://www.cleantrail.net)  
 - **Chrome Web Store:** [https://chromewebstore.google.com/detail/cleantrail/jndmenkfpnihhjlnobgpifocfkleoeon]  
 - **Email:** support@cleantrail.net 
 
