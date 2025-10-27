@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <link rel="stylesheet" href="popup.css">
+<head>
+  <meta charset="utf-8" />
+  <title>CleanTrail</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    /* Minimal layout — replace with your CSS or Tailwind */
+    body { font-family: system-ui, Arial, sans-serif; margin: 12px; width: 360px; }
+    h2 { margin: 6px 0; font-size: 16px; }
+    .ct-row { display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid #eee; }
+    .ct-row-label { color:#555; font-size:12px; }
+    .ct-row-value { font-weight:600; }
+    #topTrackersList .ct-tracker { display:flex; justify-content:space-between; padding:8px; border-bottom:1px solid #f0f0f0; }
+    .ct-empty { color:#888; padding:8px; font-size:13px; }
+    button { padding:8px 10px; margin:6px 4px 0 0; }
+    .working { opacity:0.6; }
+    .ct-fp-alert { padding:6px; border-bottom:1px dashed #eee; font-size:12px; }
+  </style>
+</head>
+<body>
+  <h2>CleanTrail</h2>
+  <div style="display:flex;gap:8px;align-items:center;justify-content:space-between;">
+    <div id="privacyScore">—</div>
+    <div>
+      <button id="toggleBlockingBtn">Toggle</button>
+      <button id="manualClearBtn">Manual Clear</button>
+      <button id="openSettingsBtn">Settings</button>
+    </div>
+  </div>
+
+  <h3>Protection Summary</h3>
+  <div id="protectionSummary"></div>
+
+  <h3>Top Trackers</h3>
+  <div id="topTrackersList"></div>
+
+  <h3>Fingerprinting Alerts</h3>
+  <div id="fingerprintAlerts"></div>
+
+  <!-- Pro features (locked) -->
+<div id="proBlock" class="ct-pro-block">
+  <div class="ct-pro-header">
+    <strong>Pro & Pro+ features</strong> <span class="ct-lock">🔒</span>
+  </div>
+  <ul id="proFeatureList" class="ct-pro-list">
+    <!-- Populated by popup.js -->
+  </ul>
+  <div style="margin-top:8px;">
+    <button id="upgradeBtn">See Pro features / Upgrade</button>
+  </div>
+</div>
+
+
+  <script src="popup.js"></script>
+</body>
+</html>
