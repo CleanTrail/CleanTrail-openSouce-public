@@ -1,0 +1,66 @@
+{
+  "manifest_version": 3,
+  "name": "CleanTrail",
+  "version": "2.1.8-public",
+  "description": "A lightweight privacy extension that automatically blocks trackers and cleans cookies & cache for better privacy.",
+  "permissions": [
+    "cookies",
+    "browsingData",
+    "tabs",
+    "storage",
+    "scripting",
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback",
+    "activeTab"
+  ],
+  "host_permissions": ["<all_urls>"],
+
+  "background": {
+    "service_worker": "background-scripts.public.js"
+  },
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "cleantrail_circle_icon_16x16_new.png",
+      "32": "cleantrail_circle_icon_32x32_new.png",
+      "48": "cleantrail_circle_icon_48x48_new.png",
+      "128": "cleantrail_circle_icon_128x128_new.png"
+    },
+    "default_title": "CleanTrail"
+  },
+
+  "icons": {
+    "16": "cleantrail_circle_icon_16x16_new.png",
+    "32": "cleantrail_circle_icon_32x32_new.png",
+    "48": "cleantrail_circle_icon_48x48_new.png",
+    "128": "cleantrail_circle_icon_128x128_new.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": [
+        "content-fingerprint.js",
+        "content-tracker-monitor.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "content-cleanup.js",
+        "content-alerts.js",
+        "bundled-rules.json",
+        "bundled-cookie-categories.json"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+
+  "declarative_net_request": {
+    "rule_resources": []
+  }
+}
